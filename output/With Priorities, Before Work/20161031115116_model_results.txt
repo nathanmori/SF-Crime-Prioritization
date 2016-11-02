@@ -1,0 +1,9 @@
+
+BEST SCORE
+----------
+0.611852
+
+BEST MODEL PARAMS
+-----------------
+('rfc__max_depth', None)
+('rfc__max_features', None)

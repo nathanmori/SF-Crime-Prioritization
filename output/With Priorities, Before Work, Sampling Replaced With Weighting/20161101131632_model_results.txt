@@ -1,0 +1,10 @@
+
+BEST SCORE
+----------
+0.436809
+
+BEST MODEL PARAMS
+-----------------
+('max_features', 'auto')
+('max_depth', None)
+('class_weight', 'balanced')

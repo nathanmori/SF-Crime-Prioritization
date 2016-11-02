@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Category is target variable\
+\
+Descript and Resolution are only in train data and we don\'92t care about them, so drop\
+\
+outliers exist in train lat/long\
+X == -120.5\
+Y == 90\
+when Y == 90, location is at the north pole\
+other values look ok, must be lats/longs are missing\
+could use address to reconstruct\
+also have PdDistrict, groupby and mean\
+\
+should check other columns for non-null missing values\
+checked\
+\
+looks like all address have either \'93/\'93 or \'93Block of\'94\
+confirmed\
+\
+Class Imbalance\
+Oversample\
+\
+Group category by severity\
+\
+Plot all severities separately\
+\
+plot by pd district\
+\
+\
+box plots for categorical variables\
+\
+\
+including PdDistrict is a little redundant of lat/lng - does the \'91criminal\'92 care what PdDistrict?\
+\
+not including year, as future years are not available in existing data}

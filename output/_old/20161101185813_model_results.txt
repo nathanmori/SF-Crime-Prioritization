@@ -1,0 +1,31 @@
+
+SCORE
+----------
+0.444148
+
+PARAMS
+-----------------
+max_features: auto
+max_depth: None
+class_weight: balanced
+
+FEATURE IMPORTANCES
+-------------------
+
+DayOfYear: 0.264050
+TimeOfDay: 0.260559
+Latitude: 0.111432
+Longitude: 0.110218
+DayOfWeek: 0.100338
+Street2_count: 0.070545
+Street1_count: 0.066126
+Is_Intersection: 0.004528
+PdDistrict_TENDERLOIN: 0.002915
+PdDistrict_MISSION: 0.001516
+PdDistrict_SOUTHERN: 0.001363
+PdDistrict_NORTHERN: 0.001267
+PdDistrict_INGLESIDE: 0.001245
+PdDistrict_CENTRAL: 0.001210
+PdDistrict_PARK: 0.001000
+PdDistrict_TARAVAL: 0.000881
+PdDistrict_RICHMOND: 0.000808
