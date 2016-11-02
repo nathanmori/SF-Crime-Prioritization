@@ -93,13 +93,13 @@ if __name__ == '__main__':
         importances = \
             grid.best_estimator_.named_steps['rfc'].feature_importances_
         sorted_args = np.argsort(importances)[::-1]
-        max_importance = importances[sorted_args[0]]
+        imps = importances[sorted_args]
         for feature, importance \
             in zip(features[sorted_args],
                    importances[sorted_args]):
             f.write(('  %s:' % feature).ljust(30) +
                     ('%f' % importance).ljust(15) +
-                    '%f\n' % (importance / max_importance))
+                    '%f\n' % (importance / imps[0]))
 
     # Plot confusion matrix
     ticks = np.linspace(1, 4, num=4)
@@ -121,6 +121,25 @@ if __name__ == '__main__':
     plt.savefig('%s/output/shard_%s_confusion_matrix' % (path, time_str)
                 if shard else
                 '%s/output/%s_confusion_matrix' % (path, time_str))
+    if 'show' in argv:
+        plt.show()
+    else:
+        plt.close()
+
+    # Plot feature importances
+    fig = plt.figure(figsize=(12, 12))
+    n_feats = len(features)
+    x_ind = np.arange(n_feats)
+    plt.barh(x_ind, imps[::-1]/imps[0], height=.8, align='center')
+    plt.ylim(x_ind.min() - .5, x_ind.max() + .5)
+    plt.yticks(x_ind, features[::-1], fontsize=32)
+    plt.xticks(np.arange(0, 1.1, 0.2), fontsize=32)
+    plt.title('Feature Importances',
+              fontsize=40)
+    plt.gcf().tight_layout()
+    plt.savefig('%s/output/shard_%s_feature_importances' % (path, time_str)
+                if shard else
+                '%s/output/%s_feature_importances' % (path, time_str))
     if 'show' in argv:
         plt.show()
     else:
