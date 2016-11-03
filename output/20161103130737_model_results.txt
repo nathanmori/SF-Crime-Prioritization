@@ -1,0 +1,66 @@
+
+GRID SCORE
+----------
+  0.483185
+
+ACCURACY
+--------
+  Total: 0.493857
+
+PRECISION
+---------
+  Priority 1: 0.241355
+  Priority 2: 0.474892
+  Priority 3: 0.574649
+  Priority 4: 0.292726
+
+RECALL
+------
+  Priority 1: 0.165627
+  Priority 2: 0.490173
+  Priority 3: 0.637523
+  Priority 4: 0.218657
+
+CONFUSION MATRIX
+----------------
+                   prediction
+         1         2         3         4
+  t  1  0.01898293039590.03168377271510.0572494567520.00669664211231
+  r  2  0.02121514443340.1619038507970.1227581054430.0244222437851
+  u  3  0.03111433035860.1142073590170.2916137085280.0204817026782
+  e  4  0.007338973090430.033132434070.03584297968690.0213563661378
+
+PARAMS
+------
+  rfc__min_samples_split: 2
+  feng__include_Intersection: True
+  rfc__n_jobs: -1
+  rfc__max_depth: None
+  rfc__max_features: auto
+  rfc__criterion: gini
+  feng__include_Mean: True
+  feng__dummy_PdDistrict: True
+  rfc__class_weight: balanced
+
+FEATURE IMPORTANCES
+-------------------
+  Feature                     Importance     Normalized
+  DayOfYear:                  0.254067       1.000000
+  TimeOfDay:                  0.250995       0.987906
+  DayOfWeek:                  0.105350       0.414653
+  Latitude:                   0.093808       0.369226
+  Longitude:                  0.091636       0.360675
+  Street1_Street2_count:      0.072458       0.285192
+  Street2_count:              0.057218       0.225208
+  Street1_count:              0.053744       0.211536
+  Is_Intersection:            0.006018       0.023687
+  PdDistrict_Mean_Priority:   0.004591       0.018071
+  PdDistrict_TENDERLOIN:      0.002771       0.010905
+  PdDistrict_BAYVIEW:         0.001196       0.004709
+  PdDistrict_NORTHERN:        0.001187       0.004672
+  PdDistrict_MISSION:         0.001174       0.004622
+  PdDistrict_INGLESIDE:       0.000930       0.003660
+  PdDistrict_CENTRAL:         0.000818       0.003218
+  PdDistrict_PARK:            0.000808       0.003180
+  PdDistrict_RICHMOND:        0.000623       0.002453
+  PdDistrict_TARAVAL:         0.000607       0.002389

@@ -1,0 +1,64 @@
+
+GRID SCORE
+----------
+  0.482628
+
+ACCURACY
+--------
+  Total: 0.493552
+
+PRECISION
+---------
+  Priority 1: 0.239112
+  Priority 2: 0.474316
+  Priority 3: 0.576342
+  Priority 4: 0.291891
+
+RECALL
+------
+  Priority 1: 0.164908
+  Priority 2: 0.492852
+  Priority 3: 0.634316
+  Priority 4: 0.222289
+
+CONFUSION MATRIX
+----------------
+                   prediction
+         1         2         3         4
+  t  1  4156      7133      12445     1468      
+  r  2  4643      35615     26579     5426      
+  u  3  6973      25121     63797     4685      
+  e  4  1609      7218      7872      4773      
+
+PARAMS
+------
+  feng__include_Intersection: True
+  rfc__n_jobs: -1
+  rfc__max_depth: None
+  rfc__max_features: auto
+  feng__include_Mean: True
+  feng__dummy_PdDistrict: True
+  rfc__class_weight: balanced
+
+FEATURE IMPORTANCES
+-------------------
+  Feature                     Importance     Normalized
+  DayOfYear:                  0.260469       1.000000
+  TimeOfDay:                  0.259228       0.995234
+  DayOfWeek:                  0.105001       0.403123
+  Latitude:                   0.089707       0.344406
+  Longitude:                  0.088262       0.338859
+  Street1_Street2_count:      0.068828       0.264247
+  Street2_count:              0.055231       0.212046
+  Street1_count:              0.052871       0.202985
+  Is_Intersection:            0.005901       0.022654
+  PdDistrict_Mean_Priority:   0.005266       0.020219
+  PdDistrict_BAYVIEW:         0.001521       0.005839
+  PdDistrict_MISSION:         0.001307       0.005017
+  PdDistrict_NORTHERN:        0.001282       0.004921
+  PdDistrict_CENTRAL:         0.001083       0.004159
+  PdDistrict_SOUTHERN:        0.001031       0.003957
+  PdDistrict_INGLESIDE:       0.000999       0.003834
+  PdDistrict_PARK:            0.000715       0.002745
+  PdDistrict_TARAVAL:         0.000670       0.002573
+  PdDistrict_RICHMOND:        0.000626       0.002403

@@ -1,0 +1,55 @@
+
+GRID SCORE
+----------
+  0.483348
+
+ACCURACY
+--------
+  Total: 0.494495
+
+PRECISION
+---------
+  Priority 1: 0.240421
+  Priority 2: 0.475704
+  Priority 3: 0.577040
+  Priority 4: 0.292650
+
+RECALL
+------
+  Priority 1: 0.166986
+  Priority 2: 0.492685
+  Priority 3: 0.635024
+  Priority 4: 0.223526
+
+CONFUSION MATRIX
+----------------
+                   prediction
+         1         2         3         4
+  t  1  4185      7136      12335     1406      
+  r  2  4627      35830     26689     5578      
+  u  3  6958      25168     63771     4526      
+  e  4  1637      7186      7719      4762      
+
+PARAMS
+------
+  feng__include_Intersection: True
+  rfc__n_jobs: -1
+  rfc__max_depth: None
+  rfc__max_features: auto
+  feng__include_Mean: True
+  feng__dummy_PdDistrict: False
+  rfc__class_weight: balanced
+
+FEATURE IMPORTANCES
+-------------------
+  Feature                     Importance     Normalized
+  DayOfYear:                  0.259613       1.000000
+  TimeOfDay:                  0.254690       0.981035
+  DayOfWeek:                  0.107960       0.415849
+  Latitude:                   0.094382       0.363548
+  Longitude:                  0.091218       0.351362
+  Street1_Street2_count:      0.070574       0.271843
+  Street2_count:              0.054857       0.211301
+  Street1_count:              0.050453       0.194340
+  PdDistrict_Mean_Priority:   0.010954       0.042195
+  Is_Intersection:            0.005300       0.020414
