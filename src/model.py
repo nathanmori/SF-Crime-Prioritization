@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
+import seaborn
 from eda.eda import *
 from eda.feat_engr import FeatureEngineer
 from sklearn.ensemble import RandomForestClassifier
@@ -41,8 +42,10 @@ if __name__ == '__main__':
     param_grid = {'feng__dummy_PdDistrict': [False],
                   'feng__include_Mean': [False],
                   'feng__include_Intersection': [False],
-                  'rfc__max_features': ['auto'],#, None],
-                  'rfc__max_depth': [None],#, 5],
+                  'rfc__criterion': ['gini', 'entropy'],
+                  'rfc__max_features': ['auto', None],
+                  'rfc__max_depth': [None, 10],
+                  'rfc__min_samples_split': [2, 5, 10],
                   'rfc__n_jobs': [-1],
                   'rfc__class_weight': ['balanced']}
     grid = GridSearchCV(pipe, param_grid=param_grid, n_jobs=-1)
@@ -108,8 +111,8 @@ if __name__ == '__main__':
     plt_confmat[1:, 1:] = confmat
     plt.imshow(plt_confmat, interpolation='none')
     plt.colorbar()
-    ax.set_xticks(ticks)
-    ax.set_yticks(ticks)
+    plt.xticks(ticks, fontsize=20)
+    plt.yticks(ticks, fontsize=20)
     ax.set_xlabel('Predicted Priority', fontsize=20)
     ax.set_ylabel('True Priority', fontsize=20)
     ax.set_xlim((.5, 4.5))
@@ -132,10 +135,10 @@ if __name__ == '__main__':
     x_ind = np.arange(n_feats)
     plt.barh(x_ind, imps[::-1]/imps[0], height=.8, align='center')
     plt.ylim(x_ind.min() - .5, x_ind.max() + .5)
-    plt.yticks(x_ind, features[::-1], fontsize=32)
-    plt.xticks(np.arange(0, 1.1, 0.2), fontsize=32)
+    plt.yticks(x_ind, features[::-1], fontsize=20)
+    plt.xticks(np.arange(0, 1.1, 0.2), fontsize=20)
     plt.title('Feature Importances',
-              fontsize=40)
+              fontsize=30)
     plt.gcf().tight_layout()
     plt.savefig('%s/output/shard_%s_feature_importances' % (path, time_str)
                 if shard else
